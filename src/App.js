@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from "./common/header/header";
+import Footer from "./common/footer/footer";
+import Sidebar from "./common/sidebar/sidebar";
 
 class App extends Component {
   constructor() {
@@ -14,14 +17,14 @@ class App extends Component {
 
   render() {
     return ([
-      <Header logo={logo}/>,
-      <main className="main">
+      <Header logo={logo} key="header"/>,
+      <main className="main" key="main">
         <article className="main-menu">
           <Sidebar />
           <aside className="switch-content"> </aside>
         </article>
       </main>,
-      <Footer />
+      <Footer key="footer"/>
     ]);
   }
 }
