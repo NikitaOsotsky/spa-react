@@ -9,7 +9,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      header: {},
+      header: {
+        headline: "SPA-ReactJS"
+      },
       sidebar: {},
       footer: {}
     }
@@ -17,7 +19,7 @@ class App extends Component {
 
   render() {
     return ([
-      <Header logo={logo} key="header"/>,
+      <Header logo={logo} headline={this.state.header.headline} key="header"/>,
       <main className="main" key="main">
         <article className="main-menu">
           <Sidebar />
