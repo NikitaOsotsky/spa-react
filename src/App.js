@@ -12,17 +12,21 @@ class App extends Component {
       header: {
         headline: "SPA-ReactJS"
       },
-      sidebar: {},
+      sidebar: {
+        headline: "Menu:",
+        items: ["Home", "Docs", "Examples", "About"]
+      }
+      ,
       footer: {}
     }
-  }
+  };
 
   render() {
     return ([
       <Header logo={logo} headline={this.state.header.headline} key="header"/>,
       <main className="main" key="main">
         <article className="main-menu">
-          <Sidebar />
+          <Sidebar headline={this.state.sidebar.headline} items={this.state.sidebar.items}/>
           <aside className="switch-content"> </aside>
         </article>
       </main>,
