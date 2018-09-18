@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './sidebar.css';
 
 class Sidebar extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Sidebar extends Component {
   render() {
     return (
       <aside className="sidebar">
-          <section>
+        <section>
           <h3>{this.props.headline}</h3>
           <ul>{this.items}</ul>
         </section>

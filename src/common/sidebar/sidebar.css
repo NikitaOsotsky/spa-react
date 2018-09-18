@@ -1,0 +1,28 @@
+.sidebar {
+  width: 20em;
+  display: inline-block;
+}
+.sidebar > section {
+  font-family: Georgia, sans-serif;
+  /*background: rgba(218, 229, 231, 0.91);*/
+  padding: 1em;
+}
+.sidebar > section > h3 {
+  margin: 0;
+}
+.sidebar > section > ul {
+  margin-bottom: 0;
+}
+.sidebar > section > ul > li {
+  width: 80%;
+  list-style-type: none;
+  border-bottom: rgba(179, 190, 192, 0.91) solid 1px;
+  padding-bottom: 0.3em;
+  cursor: pointer;
+  color: rgb(117,219,253);
+  transition: 200ms ease-in-out;
+}
+.sidebar > section > ul > li:hover {
+  background-color: rgba(218, 229, 231, 0.91);
+  color: rgb(97, 181, 207);
+}
