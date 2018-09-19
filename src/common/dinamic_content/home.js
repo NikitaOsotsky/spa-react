@@ -5,7 +5,8 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <p>Page Home!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum deleniti ea eligendi esse ipsa minus
+          perferendis reiciendis suscipit tempora voluptatibus?</p>
       </div>
     );
   }
