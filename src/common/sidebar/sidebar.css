@@ -1,6 +1,7 @@
 .sidebar {
   width: 20em;
   display: inline-block;
+  vertical-align: top;
 }
 .sidebar > section {
   font-family: Georgia, sans-serif;
