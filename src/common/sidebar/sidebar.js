@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import {
+  NavLink
+} from "react-router-dom";
 import './sidebar.css';
 
 class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.items = props.items.map((item)=>
-      <li key={item}>{item}</li>
+      <li key={item}><NavLink to={"/"+item}>{item}</NavLink></li>
     )
   }
 
