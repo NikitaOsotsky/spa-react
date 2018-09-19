@@ -30,7 +30,7 @@ class App extends Component {
           <aside className="switch-content"> </aside>
         </article>
       </main>,
-      <Footer key="footer"/>
+      <Footer headline={this.state.header.headline} logo={logo} key="footer"/>
     ]);
   }
 }
