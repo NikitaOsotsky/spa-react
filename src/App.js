@@ -8,6 +8,10 @@ import Header from "./common/header/header";
 import Footer from "./common/footer/footer";
 import Sidebar from "./common/sidebar/sidebar";
 import Content from "./common/content/content"
+import Home from "./dinamic_content/home/home";
+import Docs from "./dinamic_content/docs/docs";
+import Examples from "./dinamic_content/examples/examples";
+import About from "./dinamic_content/about/about";
 
 class App extends Component {
   constructor() {
@@ -19,8 +23,13 @@ class App extends Component {
       sidebar: {
         headline: "Menu:",
         items: ["Home", "Docs", "Examples", "About"]
-      }
-      ,
+      },
+      content: {
+        Home: Home,
+        Docs: Docs,
+        Examples: Examples,
+        About: About
+      },
       footer: {}
     }
   };
@@ -33,7 +42,7 @@ class App extends Component {
       <main className="main" key="main">
         <article className="main-menu">
           <Sidebar headline={this.state.sidebar.headline} items={this.state.sidebar.items}/>
-          <Content headline={this.state.sidebar.headline} items={this.state.sidebar.items}/>
+          <Content headline={this.state.sidebar.headline} items={this.state.sidebar.items} pagesName={this.state.content}/>
         </article>
       </main>
       <Footer headline={this.state.header.headline} logo={logo} key="footer"/>
