@@ -1,0 +1,38 @@
+.footer {
+    border-top: rgba(179, 190, 192, 0.91) solid 1px;
+}
+.top-footer {
+  display: flex;
+  flex-direction: row;
+}
+.top-footer > img {
+  flex: 1;
+  align-self: center;
+  width: 64px;
+}
+.top-footer > h4 {
+  flex: 11;
+  align-self: center;
+}
+.bottom-footer {
+
+}
+.spinner {
+  animation-name: spinner;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 16s;
+}
+
+@keyframes spinner {
+  from {
+    -moz-transform: rotateZ(0deg);
+    -ms-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  to {
+    -moz-transform: rotateZ(-360deg);
+    -ms-transform: rotateZ(-360deg);
+    transform: rotateZ(-360deg);
+  }
+}
