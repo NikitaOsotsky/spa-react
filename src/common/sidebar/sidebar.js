@@ -7,8 +7,12 @@ import './sidebar.css';
 class Sidebar extends Component {
   constructor(props) {
     super(props);
-    this.items = props.items.map((item)=>
-      <li key={item}><Link to={"/"+item}>{item}</Link></li>
+    this.items = props.items.map((item)=> {
+      if (item === "Home") {
+        return <li key={item}><Link to={"/"}>{item}</Link></li>
+      }
+      return <li key={item}><Link to={"/"+item}>{item}</Link></li>
+    }
     )
   }
 
