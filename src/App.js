@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {
-  HashRouter
+  BrowserRouter as Router
 } from "react-router-dom";
 import Header from "./common/header/header";
 import Footer from "./common/footer/footer";
@@ -35,20 +35,20 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <HashRouter>
-        <div>
-      <Header logo={logo} headline={this.state.header.headline} key="header"/>
+    return ([
+      <Header logo={logo} headline={this.state.header.headline} key="header"/>,
       <main className="main" key="main">
         <article className="main-menu">
-          <Sidebar headline={this.state.sidebar.headline} items={this.state.sidebar.items}/>
-          <Content headline={this.state.sidebar.headline} items={this.state.sidebar.items} pagesName={this.state.content}/>
+          <Router>
+            <div>
+            <Sidebar headline={this.state.sidebar.headline} items={this.state.sidebar.items}/>
+            <Content headline={this.state.sidebar.headline} items={this.state.sidebar.items} pagesName={this.state.content}/>
+            </div>
+          </Router>
         </article>
-      </main>
+      </main>,
       <Footer headline={this.state.header.headline} logo={logo} key="footer"/>
-        </div>
-      </HashRouter>
-        );
+        ]);
   }
 }
 
