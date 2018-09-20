@@ -8,10 +8,7 @@ import Header from "./common/header/header";
 import Footer from "./common/footer/footer";
 import Sidebar from "./common/sidebar/sidebar";
 import Content from "./common/content/content"
-import Home from "./dinamic_content/home/home";
-import Docs from "./dinamic_content/docs/docs";
-import Examples from "./dinamic_content/examples/examples";
-import About from "./dinamic_content/about/about";
+import { Home, Docs, Examples, About } from "./importer";
 
 class App extends Component {
   constructor() {
