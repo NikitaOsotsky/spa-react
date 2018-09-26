@@ -46,7 +46,7 @@ class News extends Component {
       <h3>{item.name}</h3>
       <p>
         {item.text}
-        <Link to={"News/"+item.name.toLowerCase()}> click to show more...</Link>
+        <Link to={"News/"+item.name.toLowerCase()}> more...</Link>
       </p>
     </div>
     );
