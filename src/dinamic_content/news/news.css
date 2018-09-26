@@ -1,6 +1,17 @@
 .news {
 
 }
+.article {
+  border: 1px solid red;
+  margin-bottom: 12px;
+  padding: 0 12px;
+}
+.article > h3 {
+
+}
+.article > p {
+
+}
 .lds-roller {
   display: inline-block;
   position: relative;

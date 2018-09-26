@@ -39,9 +39,16 @@ class News extends Component {
       </div>
     );
     //TODO: data constructing
+    this.items = this.state.data.map((item) =>
+    <div className="article">
+      <h3>{item.name}</h3>
+      <p>{item.text}</p>
+    </div>
+    );
+
     return (
       <div className="news">
-
+        {this.items}
       </div>
     );
   }
