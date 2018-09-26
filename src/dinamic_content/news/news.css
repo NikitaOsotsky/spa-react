@@ -12,6 +12,9 @@
 .article > p {
 
 }
+.article a {
+  text-decoration: none;
+}
 .lds-roller {
   display: inline-block;
   position: relative;

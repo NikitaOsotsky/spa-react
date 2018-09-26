@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './news.css';
+import {Link} from "react-router-dom";
 
 class News extends Component {
   constructor(props) {
@@ -40,9 +41,12 @@ class News extends Component {
     );
     //TODO: data constructing
     this.items = this.state.data.map((item) =>
-    <div className="article">
+    <div className="article" key={item.name}>
       <h3>{item.name}</h3>
-      <p>{item.text}</p>
+      <p>
+        {item.text}
+        <Link to={"News/"+item.name.toLowerCase()}> more...</Link>
+      </p>
     </div>
     );
 
