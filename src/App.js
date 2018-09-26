@@ -14,6 +14,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      server: "http://localhost:3004/data",
       header: {
         headline: "SPA-ReactJS"
       },
@@ -40,7 +41,11 @@ class App extends Component {
           <Router>
             <div>
             <Sidebar headline={this.state.sidebar.headline} items={this.state.sidebar.items}/>
-            <Content headline={this.state.sidebar.headline} items={this.state.sidebar.items} pagesName={this.state.content}/>
+            <Content headline={this.state.sidebar.headline}
+                     items={this.state.sidebar.items}
+                     pagesName={this.state.content}
+                     requestAddress={this.state.server}
+            />
             </div>
           </Router>
         </article>
