@@ -42,11 +42,11 @@ class News extends Component {
 
     //TODO: data constructing
     this.items = this.state.data.map((item) =>
-    <div className="article" key={item.name}>
+    <div className="article short-box" key={item.name}>
       <h3>{item.name}</h3>
       <p>
         {item.text}
-        <Link to={"News/"+item.name.toLowerCase()}> more...</Link>
+        <Link to={"News/"+item.name.toLowerCase()}> click to show more...</Link>
       </p>
     </div>
     );

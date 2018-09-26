@@ -26,7 +26,7 @@ class Content extends Component {
     console.log("render in Content run");
     return (
       <aside className="switch-content">
-        <p>Generic content below!</p>
+        <hr/>
         {this.items}
       </aside>
     );
