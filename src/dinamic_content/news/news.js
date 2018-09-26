@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './news.css';
-import {Link} from "react-router-dom";
+import {Link, Route} from "react-router-dom";
 
 class News extends Component {
   constructor(props) {
@@ -39,6 +39,7 @@ class News extends Component {
         </div>
       </div>
     );
+
     //TODO: data constructing
     this.items = this.state.data.map((item) =>
     <div className="article" key={item.name}>
@@ -49,10 +50,22 @@ class News extends Component {
       </p>
     </div>
     );
+    this.routs = this.state.data.map((item) =>
+      <Route key={item.name} path={'/News/'+item.name.toLowerCase()} render={()=>
+        <div className="article">
+          <h3>{item.name}</h3>
+          <p>
+            {item.text}
+          </p>
+        </div>
+      }/>
+    );
+    //TODO:
 
     return (
       <div className="news">
-        {this.items}
+        <Route key="default" path={'/News'} exact render={()=> this.items} />
+        {this.routs}
       </div>
     );
   }
