@@ -23,17 +23,22 @@ class News extends Component {
       .catch( console.log );
   }
 
-  shouldComponentUpdate() {
-    console.log("shouldComponentUpdate in News run");
-
-    return true;
-  }
-
   render() {
-    console.log("render in News run");
-    console.log(this.state.data);
-    if (!this.state.data) return null;
-
+    if (!this.state.data) return (
+      <div className="news">
+        <div className="lds-roller">
+          <div> </div>
+          <div> </div>
+          <div> </div>
+          <div> </div>
+          <div> </div>
+          <div> </div>
+          <div> </div>
+          <div> </div>
+        </div>
+      </div>
+    );
+    //TODO: data constructing
     return (
       <div className="news">
 
