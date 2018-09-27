@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './news.css';
 import {Link, Route} from "react-router-dom";
+import Spinner from '../../common/spinner/spinner';
 
 class News extends Component {
   constructor(props) {
@@ -27,18 +28,7 @@ class News extends Component {
 
   render() {
     if (!this.state.data) return (
-      <div className="news">
-        <div className="lds-roller">
-          <div> </div>
-          <div> </div>
-          <div> </div>
-          <div> </div>
-          <div> </div>
-          <div> </div>
-          <div> </div>
-          <div> </div>
-        </div>
-      </div>
+      <Spinner />
     );
 
     //TODO: data constructing
