@@ -50,7 +50,8 @@ class News extends Component {
         {item.text}
         <Link to={"News/"+item.name.toLowerCase()}> more...</Link>
       </p>
-    </div> )
+    </div> );
+      return null;
     });
     this.routs = this.state.data.map((item) =>
       <Route key={item.name} path={'/News/' + item.name.toLowerCase()} render={() =>
@@ -81,7 +82,6 @@ class News extends Component {
 
   inputHandler(e) {
     const filterValue = e.target.value;
-    console.log(filterValue);
     this.setState(() => {
       return {filter: filterValue};
     });
