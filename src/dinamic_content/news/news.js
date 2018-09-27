@@ -7,7 +7,8 @@ class News extends Component {
     super(props);
     this.loadData();
     this.state = {
-      data: undefined
+      data: undefined,
+      filter: undefined
     };
   }
 
@@ -25,7 +26,6 @@ class News extends Component {
   }
 
   render() {
-    console.log(this.state);
     if (!this.state.data) return (
       <div className="news">
         <div className="lds-roller">
@@ -42,17 +42,18 @@ class News extends Component {
     );
 
     //TODO: data constructing
-    this.items = this.state.data.map((item) =>
-    <div className="article short-box" key={item.name}>
+    this.items = this.state.data.map((item) => {
+      if (!this.state.filter || item.name.toLowerCase().includes(this.state.filter.toLowerCase())) return (
+      <div className="article short-box" key={item.name}>
       <h3>{item.name}</h3>
       <p>
         {item.text}
         <Link to={"News/"+item.name.toLowerCase()}> more...</Link>
       </p>
-    </div>
-    );
+    </div> )
+    });
     this.routs = this.state.data.map((item) =>
-      <Route key={item.name} path={'/News/'+item.name.toLowerCase()} render={()=>
+      <Route key={item.name} path={'/News/' + item.name.toLowerCase()} render={() =>
         <div className="article">
           <h3>{item.name}</h3>
           <p>
