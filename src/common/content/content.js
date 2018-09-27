@@ -10,9 +10,9 @@ class Content extends Component {
     super(props);
     this.items = props.items.map((item)=> {
       if (item === 'Home') {
-        return   <Route key={item} exact path={"/"} component={obj[item]} /> /*exact*/
+        return   <Route key={item} exact path={"/"} component={obj[item]} />
       }
-      return   <Route key={item} path={"/"+item} component={obj[item]} /> /*exact*/
+      return   <Route key={item} path={"/"+item} component={obj[item]} />
       }
     );
   }
