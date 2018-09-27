@@ -6,7 +6,9 @@ class Footer extends Component {
     return (
       <footer className="footer">
         <section className="top-footer">
-          <img className="spinner" src={this.props.logo} alt="logo"/>
+          <div>
+            <img className="spinner" src={this.props.logo} alt="logo"/>
+          </div>
           <h4>{this.props.headline}</h4>
         </section>
         <section className="bottom-footer">

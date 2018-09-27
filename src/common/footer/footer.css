@@ -5,13 +5,16 @@
   display: flex;
   flex-direction: row;
 }
-.top-footer > img {
-  flex: 1;
+.top-footer img {
+
+}
+.top-footer > div {
+  flex: 1 0;
   align-self: center;
-  width: 64px;
+  height: 64px;
 }
 .top-footer > h4 {
-  flex: 11;
+  flex: 11 0;
   align-self: center;
 }
 .bottom-footer {
