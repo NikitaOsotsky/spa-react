@@ -37,6 +37,9 @@
   float: left;
   font-size: 0.8em;
 }
+.filter {
+  flex: 0 0 100%;
+}
 /**/
 .lds-roller {
   display: inline-block;
