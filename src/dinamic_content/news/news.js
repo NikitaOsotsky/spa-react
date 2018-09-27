@@ -25,6 +25,7 @@ class News extends Component {
   }
 
   render() {
+    console.log(this.state);
     if (!this.state.data) return (
       <div className="news">
         <div className="lds-roller">
@@ -65,8 +66,8 @@ class News extends Component {
     return (
       <div className="news">
         <Route key="default" path={'/News'} exact render={()=>
-          [<div className="filter">
-            <input type="text" id="filter-box" name="filter-box" required
+          [<div key="filter" className="filter">
+            <input onChange={(e)=> this.inputHandler(e)} type="text" id="filter-box" name="filter-box" required
                    minLength="1" maxLength="4"
                    placeholder="Enter first letters"/>
           </div>,
@@ -75,6 +76,14 @@ class News extends Component {
         {this.routs}
       </div>
     );
+  }
+
+  inputHandler(e) {
+    const filterValue = e.target.value;
+    console.log(filterValue);
+    this.setState(() => {
+      return {filter: filterValue};
+    });
   }
 
 }
