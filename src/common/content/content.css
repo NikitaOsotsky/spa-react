@@ -1,5 +1,6 @@
 .switch-content {
   display: inline-block;
-  max-width: 60%;
+  max-width: 60em;
+  width: 100%;
   vertical-align: top;
 }
