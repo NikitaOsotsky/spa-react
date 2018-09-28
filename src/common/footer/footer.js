@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './footer.css';
+import gitLogo from './img/Octicons-mark-github.svg';
 
 class Footer extends Component {
   render() {
@@ -9,7 +10,14 @@ class Footer extends Component {
           <div>
             <img className="spinner" src={this.props.logo} alt="logo"/>
           </div>
-          <h4>{this.props.headline}</h4>
+          <p><span>{this.props.headline}</span></p>
+          <p>
+            <div>
+              <a href="https://github.com/NikitaOsotsky/spa-react">Link</a>
+              <span> to GitHub </span>
+            </div>
+            <img src={gitLogo} alt="logo"/>
+          </p>
         </section>
         <section className="bottom-footer">
         </section>
