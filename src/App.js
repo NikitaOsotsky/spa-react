@@ -34,7 +34,7 @@ class App extends Component {
 
   render() {
     return ([
-      <Header logo={logo} headline={this.state.header.headline} key="header"/>,
+      <Header headline={this.state.header.headline} key="header"/>,
       <main className="main" key="main">
         <article className="main-menu">
           <Router>
