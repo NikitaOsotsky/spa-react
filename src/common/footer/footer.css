@@ -42,26 +42,25 @@
   vertical-align: middle;
 }
 /*second issue <p>*/
-.top-footer > p:last-child {
+.top-footer > div:last-child {
   text-align: right;
 }
 /*img issues*/
-.top-footer div > img,
-.top-footer > p > img {
+.top-footer div > img {
   width: 4em;
   height: 100%;
   display: inline-block;
   vertical-align: middle;
 }
-.top-footer > p > div {
+.top-footer > div > div {
   display: inline-block;
 }
-.top-footer > p > div a {
+.top-footer > div > div a {
   padding-right: 0.5em;
   text-decoration: none;
   font-family: "Franklin Gothic Medium", sans-serif;
 }
-.top-footer > p > div span {
+.top-footer > div > div span {
   font-family: "Franklin Gothic Medium", sans-serif;
   text-shadow: 0 2px 1px rgba(0,0,0,0.25), 0 2px 1px rgba(0,0,0,0.22);
 }

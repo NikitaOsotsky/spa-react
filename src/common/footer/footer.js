@@ -11,13 +11,13 @@ class Footer extends Component {
             <img className="spinner" src={this.props.logo} alt="logo"/>
           </div>
           <p><span>{this.props.headline}</span></p>
-          <p>
+          <div>
             <div>
               <a href="https://github.com/NikitaOsotsky/spa-react">Link</a>
               <span> to GitHub </span>
             </div>
             <img src={gitLogo} alt="logo"/>
-          </p>
+          </div>
         </section>
         <section className="bottom-footer">
         </section>
