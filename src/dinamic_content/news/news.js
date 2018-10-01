@@ -26,6 +26,20 @@ class News extends Component {
       .catch( console.log );
   }
 
+  breakToPages(items) {
+    this.newItems = [[]];
+    for (let i = 0, j = 0; i < items.length; i++) {
+      if (i % 8 || i === 0) {
+        this.newItems[j].push(items[i]);
+      } else {
+        j++;
+        this.newItems[j] = [];
+        this.newItems[j].push(items[i]);
+      }
+    }
+    console.log(this.newItems);
+  }
+
   render() {
     if (!this.state.data) return (
       <Spinner />
@@ -43,6 +57,7 @@ class News extends Component {
     </div> );
       return null;
     });
+    this.breakToPages(this.items);
     this.routs = this.state.data.map((item) =>
       <Route key={item.name} path={'/News/' + item.name.toLowerCase()} render={() =>
         <div className="article">
