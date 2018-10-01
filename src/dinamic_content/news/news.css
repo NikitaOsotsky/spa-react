@@ -39,6 +39,14 @@
 }
 .filter {
   flex: 0 0 100%;
+  display: flex;
+}
+.filter label {
+  display: inline-block;
+  flex: 1 1 0;
+}
+.filter input {
+  margin-left: 1em;
 }
 /**/
 .pagination {

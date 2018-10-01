@@ -11,7 +11,8 @@ class News extends Component {
     this.state = {
       data: undefined,
       filter: undefined,
-      page: 0
+      page: 0,
+      itemsOn: 6
     };
   }
 
@@ -29,6 +30,7 @@ class News extends Component {
   }
 
   breakToPages(items) {
+    const a = this.state.itemsOn || 6;
     this.newItems = [[]];
     for (let i = 0, j = 0; i < items.length; i++) {
       if (!items[i]) {
@@ -36,7 +38,7 @@ class News extends Component {
         i--;
         continue;
       }
-      if (i % 8 || i === 0) {
+      if (i % a || i === 0) {
         this.newItems[j].push(items[i]);
       } else {
         j++;
@@ -98,9 +100,16 @@ class News extends Component {
       <div className="news">
         <Route key="default" path={'/News'} exact render={()=>
           [<div key="filter" className="filter">
-            <input onChange={(e)=> this.inputHandler(e)} type="text" id="filter-box" name="filter-box" required
+            <label>Filter:
+              <input onChange={(e)=> this.inputHandler(e)} type="text" name="filter-box" required
                    minLength="1" maxLength="4"
                    placeholder="Enter first letters"/>
+            </label>
+            <label>Items on page:
+              <input onChange={(e)=> this.itemsCountHandler(e)} type="number" name="items-count" required
+                   min="4" max="10" defaultValue="6"
+                   />
+            </label>
           </div>,
           this.items[this.state.page],
           <div key="pagination" className="pagination">
@@ -116,6 +125,12 @@ class News extends Component {
     const filterValue = e.target.value;
     this.setState(() => {
       return {filter: filterValue};
+    });
+  }
+  itemsCountHandler(e) {
+    const filterValue = e.target.value;
+    this.setState(() => {
+      return {itemsOn: filterValue};
     });
   }
 
