@@ -18,12 +18,10 @@ class Content extends Component {
   }
 
   shouldComponentUpdate() {
-    console.log("shouldComponentUpdate in Content run");
     return true;
   }
 
   render() {
-    console.log("render in Content run");
     return (
       <aside className="switch-content">
         <hr/>
@@ -31,7 +29,6 @@ class Content extends Component {
       </aside>
     );
   }
-
 }
 
 export default Content;
