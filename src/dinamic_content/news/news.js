@@ -33,30 +33,8 @@ class News extends Component {
       <Spinner />
     );
 
-    //TODO: data constructing
-    this.items = this.state.data.map((item) => {
-      if (!this.state.filter || item.name.toLowerCase().includes(this.state.filter.toLowerCase())) return (
-      <div className="article short-box" key={item.name}>
-      <h3>{item.name}</h3>
-      <p>
-        {item.text}
-        <Link to={"News/"+item.name.toLowerCase()}> more...</Link>
-      </p>
-    </div> );
-      return null;
-    });
-    //TODO:
-    this.routs = this.state.data.map((item) =>
-      <Route key={item.name} path={'/News/' + item.name.toLowerCase()} render={() =>
-        <div className="article">
-          <h3>{item.name}</h3>
-          <p>
-            {item.text}
-          </p>
-        </div>
-      }/>
-    );
-    //TODO:
+    this.createItems();
+    this.createRouts();
 
     return (
       <div className="news">
@@ -86,6 +64,7 @@ class News extends Component {
       return {filter: filterValue};
     });
   }
+
   itemsCountHandler(e) {
     const filterValue = e.target.value;
     this.setState(() => {
@@ -93,6 +72,32 @@ class News extends Component {
     });
   }
 
+  createRouts() {
+    this.routs = this.state.data.map((item) =>
+      <Route key={item.name} path={'/News/' + item.name.toLowerCase()} render={() =>
+        <div className="article">
+          <h3>{item.name}</h3>
+          <p>
+            {item.text}
+          </p>
+        </div>
+      }/>
+    );
+  }
+
+  createItems() {
+    this.items = this.state.data.map((item) => {
+      if (!this.state.filter || item.name.toLowerCase().includes(this.state.filter.toLowerCase())) return (
+        <div className="article short-box" key={item.name}>
+          <h3>{item.name}</h3>
+          <p>
+            {item.text}
+            <Link to={"News/"+item.name.toLowerCase()}> more...</Link>
+          </p>
+        </div> );
+      return null;
+    });
+  }
 }
 
 export default News;
