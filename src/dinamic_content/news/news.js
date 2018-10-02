@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './news.css';
 import {Link, Route} from "react-router-dom";
 import Spinner from '../../common/spinner/spinner';
-import cn from 'classnames';
+import Pagination from "../../common/pagination/pagination";
 
 class News extends Component {
   constructor(props) {
@@ -11,7 +11,6 @@ class News extends Component {
     this.state = {
       data: undefined,
       filter: undefined,
-      page: 0,
       itemsOn: 6
     };
   }
@@ -27,26 +26,6 @@ class News extends Component {
         });
       })
       .catch( console.log );
-  }
-
-  breakToPages(items) {
-    const a = this.state.itemsOn || 6;
-    this.newItems = [[]];
-    for (let i = 0, j = 0; i < items.length; i++) {
-      if (!items[i]) {
-        items.splice(i, 1);
-        i--;
-        continue;
-      }
-      if (i % a || i === 0) {
-        this.newItems[j].push(items[i]);
-      } else {
-        j++;
-        this.newItems[j] = [];
-        this.newItems[j].push(items[i]);
-      }
-    }
-    return this.newItems;
   }
 
   render() {
@@ -66,24 +45,7 @@ class News extends Component {
     </div> );
       return null;
     });
-    this.items = this.breakToPages(this.items);
-    this.pagination = this.items.map((item, i)=> {
-      let liType = 'default';
-      if (i === this.state.page) liType = 'active';
-      const liClass = cn({
-        [`li-${liType}`]: true,
-      });
-        return (
-          <li className={liClass} key={i + 1} onClick={() => {
-            this.setState(() => {
-              return {page: i};
-            });
-          }}>
-            {i + 1}
-          </li>
-        )
-      }
-    );
+    //TODO:
     this.routs = this.state.data.map((item) =>
       <Route key={item.name} path={'/News/' + item.name.toLowerCase()} render={() =>
         <div className="article">
@@ -111,10 +73,7 @@ class News extends Component {
                    />
             </label>
           </div>,
-          this.items[this.state.page],
-          <div key="pagination" className="pagination">
-            <ul>{this.pagination}</ul>
-          </div>]
+          <Pagination key="component-pagination" collection={this.items} itemsOn={this.state.itemsOn}/>]
         } />
         {this.routs}
       </div>
