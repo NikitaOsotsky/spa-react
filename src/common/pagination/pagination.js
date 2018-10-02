@@ -41,7 +41,9 @@ class Pagination extends Component {
 
 /*Common functions*/
   breakToPages(items) {
-    const a = this.state.itemsOnPage || 6;
+    let a = this.state.itemsOnPage || 6;
+    console.log(a);
+    a = (Pagination.isInteger(+a) && a > 0) ? +a : 6;
     this.newItems = [[]];
     for (let i = 0, j = 0; i < items.length; i++) {
       if (!items[i]) {
@@ -79,6 +81,10 @@ class Pagination extends Component {
         )
       }
     );
+  }
+
+  static isInteger(num) {
+    return (num ^ 0) === num;
   }
 }
 
