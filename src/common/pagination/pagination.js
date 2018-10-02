@@ -42,7 +42,6 @@ class Pagination extends Component {
 /*Common functions*/
   breakToPages(items) {
     let a = this.state.itemsOnPage || 6;
-    console.log(a);
     a = (Pagination.isInteger(+a) && a > 0) ? +a : 6;
     this.newItems = [[]];
     for (let i = 0, j = 0; i < items.length; i++) {
