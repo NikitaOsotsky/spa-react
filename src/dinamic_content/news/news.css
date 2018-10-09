@@ -1,0 +1,50 @@
+.news {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 1em;
+  align-content: center;
+}
+.short-box > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/**/
+.article {
+  flex: 1;
+  position: relative;
+  max-width: 25em;
+  padding: 1em;
+  margin: 2em 10px 2em;
+  background: #fff;
+  -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.article:before,
+.article:after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+}
+.article p {
+  font-size: 16px;
+  font-weight: bold;
+}
+.article a {
+  text-decoration: none;
+  float: left;
+  font-size: 0.8em;
+}
+.filter {
+  flex: 0 0 100%;
+  display: flex;
+}
+.filter label {
+  display: inline-block;
+  flex: 1 1 0;
+}
+.filter input {
+  margin-left: 1em;
+}

@@ -1,19 +1,72 @@
 .footer {
-    border-top: rgba(179, 190, 192, 0.91) solid 1px;
+  border-top: rgba(179, 190, 192, 0.91) solid 1px;
+  border-bottom: rgba(179, 190, 192, 0.91) solid 1px;
+  max-width: 80em;
+  padding-bottom: 1em;
 }
+/**/
+/**/
 .top-footer {
+  height: 4em;
   display: flex;
-  flex-direction: row;
 }
-.top-footer > img {
+.top-footer > div,
+.top-footer > p {
+  height: 100%;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
   flex: 1;
-  align-self: center;
-  width: 64px;
+  box-shadow: 0 5px 1px rgba(0,0,0,0.25), 0 5px 1px rgba(0,0,0,0.22);
 }
-.top-footer > h4 {
-  flex: 11;
-  align-self: center;
+/*first issue <div>*/
+.top-footer > div {
 }
+.top-footer > div:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+/*first issue <p>*/
+.top-footer > p {
+  text-align: center;
+}
+.top-footer > p:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.top-footer > p span, .top-footer > p a {
+  display: inline-block;
+  vertical-align: middle;
+}
+/*second issue <p>*/
+.top-footer > div:last-child {
+  text-align: right;
+}
+/*img issues*/
+.top-footer div > img {
+  width: 4em;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.top-footer > div > div {
+  display: inline-block;
+}
+.top-footer > div > div a {
+  padding-right: 0.5em;
+  text-decoration: none;
+  font-family: "Franklin Gothic Medium", sans-serif;
+}
+.top-footer > div > div span {
+  font-family: "Franklin Gothic Medium", sans-serif;
+  text-shadow: 0 2px 1px rgba(0,0,0,0.25), 0 2px 1px rgba(0,0,0,0.22);
+}
+/**/
+/**/
 .bottom-footer {
 
 }

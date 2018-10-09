@@ -8,7 +8,7 @@ import Header from "./common/header/header";
 import Footer from "./common/footer/footer";
 import Sidebar from "./common/sidebar/sidebar";
 import Content from "./common/content/content"
-import { Home, Docs, Examples, About } from "./importer";
+import { Home, Docs, Examples, About, News } from "./importer";
 
 class App extends Component {
   constructor() {
@@ -19,13 +19,14 @@ class App extends Component {
       },
       sidebar: {
         headline: "Menu:",
-        items: ["Home", "Docs", "Examples", "About"]
+        items: ["Home", "Docs", "Examples", "About", "News"]
       },
       content: {
         Home: Home,
         Docs: Docs,
         Examples: Examples,
-        About: About
+        About: About,
+        News: News
       },
       footer: {}
     }
@@ -33,13 +34,16 @@ class App extends Component {
 
   render() {
     return ([
-      <Header logo={logo} headline={this.state.header.headline} key="header"/>,
+      <Header headline={this.state.header.headline} key="header"/>,
       <main className="main" key="main">
         <article className="main-menu">
           <Router>
             <div>
             <Sidebar headline={this.state.sidebar.headline} items={this.state.sidebar.items}/>
-            <Content headline={this.state.sidebar.headline} items={this.state.sidebar.items} pagesName={this.state.content}/>
+            <Content headline={this.state.sidebar.headline}
+                     items={this.state.sidebar.items}
+                     pagesName={this.state.content}
+            />
             </div>
           </Router>
         </article>
